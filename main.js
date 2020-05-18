@@ -23,11 +23,14 @@ function getRandom() {
     return Randomdie;
 }
 
-function total() {
-    let total = 0;
-    for (let i = 0; i < ray.length; i++)
-        total += ray[i];
-    console.log(ray)
+//function total() {
+//  let total = 0;
+//for (let i = 0; i < ray.length; i++)
+//  total += ray[i];
+//console.log(ray)}
+function sum(dieRoll) {
+    return dieRoll[0] + dieRoll[1] + dieRoll[2] +
+        dieRoll[3] + dieRoll[4] + dieRoll[5]
 }
 
 
@@ -46,20 +49,27 @@ rollbutton.addEventListener("click", function () {
 
     }
 
-    console.log(dieRoll)
-    let ray = dieRoll
-    //ray.total();
-    //document.getElementById("#Rolls").innerHTML = showalldice
+    console.log(dieRoll);
+    var array = dieRoll;
+    var sum = dieRoll.reduce(function (a, b) {
+        return a + b;
+    }, 0);
+    console.log(sum);
+    let ftotal = sum
+    //https://www.tutorialrepublic.com/faq/how-to-find-the-sum-of-an-array-of-numbers-in-javascript.php
+    tot.innerHTML = Number(sum)
+
+
 })
 
-showbutton.addEventListener("click", function () {
-    console.log("Show all die")
+//showbutton.addEventListener("click", function () {
+  //  console.log("Show all die")
 
-    counter = 0
-    while
+   // counter = 0
+   // while
     //showalldice.innerHtML
+   // (counter < dieRoll.length) { var p=document./////createElement("p"); p.innerHTML=dieRoll[counter]; oderlist.appendChild(p); }
 
 
-})
 
 
