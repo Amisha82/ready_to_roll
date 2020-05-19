@@ -15,12 +15,12 @@ let rollbutton = document.querySelector("#roll-button")
 let totalofall = document.querySelector("#total")
 let showbutton = document.querySelector("#showalldice")
 let oderlist = document.querySelector("ol")
-const dieRoll = []
+let dieRoll = []
 let show = document.querySelector("#olist")
 
 function getRandom() {
-    var Randomdie = Math.floor((Math.random() * 6) + 1);
-    return Randomdie;
+    var randomdie = Math.floor((Math.random() * 6) + 1);
+    return randomdie;
 }
 
 //function total() {
@@ -29,11 +29,18 @@ function getRandom() {
 //  total += ray[i];
 //console.log(ray)}
 function sum(dieRoll) {
+
     return dieRoll[0] + dieRoll[1] + dieRoll[2] +
         dieRoll[3] + dieRoll[4] + dieRoll[5]
 }
 
 
+function total1() {
+    let totals = 0;
+    for (let i = 0; i < dieRoll.length; i++)
+        totals += dieRoll[i];
+
+}
 
 rollbutton.addEventListener("click", function () {
     console.log("roll the die")
@@ -50,6 +57,7 @@ rollbutton.addEventListener("click", function () {
     }
 
     console.log(dieRoll);
+    let o = dieRoll
     var array = dieRoll;
     var sum = dieRoll.reduce(function (a, b) {
         return a + b;
@@ -57,19 +65,60 @@ rollbutton.addEventListener("click", function () {
     console.log(sum);
     let ftotal = sum
     //https://www.tutorialrepublic.com/faq/how-to-find-the-sum-of-an-array-of-numbers-in-javascript.php
-    tot.innerHTML = Number(sum)
+    tot.innerHTML = Number(sum);
+    showbutton.addEventListener("click", function () {
+
+        let numrolled = o
+
+        counter = 0
+        i = 0
+        let newval = []
+        while (counter < o.length) {
+            let p = o[i];
+            newval.push(p)
+            i++;
+            counter++
+        }
+        console.log(newval);
+        dieRoll = []
 
 
-})
+        show.innerHTML = "<ol><li>" + newval.join('</li><li>') + "</li></ol>";
+        // let newDice = newval;
+        //  show.innerHTML = '<li class="ol">' + newDice. + '</li>'
+    })
+
+}
+
+
+
+    //   const newDice = '<li class="olist">' + numrolled[0] + '</li>' + '</br>' + '<li class="olist">' + numrolled[1] + '</li>' + '</br>' + '<li class="olist">' + + numrolled[2] + '</li>' + '</br>' + '<li class="olist">' + numrolled[3] + '</li>' + '</br>' + '<li class="olist">' + numrolled[4] + '</li>' + '</br>' + '<li class="olist">' + numrolled[5];
+    //  (olist.innerHTML) = newDice
+)
+
+
+
+
+
 
 //showbutton.addEventListener("click", function () {
-  //  console.log("Show all die")
+
+  //  let numrolled = o
+   // console.log(o)
+
+
+
+//})
+
+
+
+
+
+
+
+
 
    // counter = 0
    // while
     //showalldice.innerHtML
-   // (counter < dieRoll.length) { var p=document./////createElement("p"); p.innerHTML=dieRoll[counter]; oderlist.appendChild(p); }
-
-
-
-
+   // (counter < dieRoll.length) { var p=document./////createElement("p"); p.innerHTML=dieRoll[counter]; oderlist.appendChild(p);}
