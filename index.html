@@ -5,10 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dice Roller</title>
-    <link rel="styesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
+    <label for="num-of-side">Enter a number of side</label>
+    <input type="text" id="num-of-side">
+
+    <button id="side-button">Side</button>
+
+    </br>
+
+
     <label for="num-of-dice">Enter a number of dice</label>
     <input type="text" id="num-of-dice">
 
@@ -21,8 +30,52 @@
     <div id="olist">
         <ol type="1">
 
+
         </ol>
     </div>
+
+    <button id="reset-button">Reset</button>
+
+
+    <section class="container">
+        <div id="cube">
+            <div class="front">
+                <span class="dot dot1"></span>
+            </div>
+            <div class="back">
+                <span class="dot dot1"></span>
+                <span class="dot dot2"></span>
+            </div>
+            <div class="right">
+                <span class="dot dot1"></span>
+                <span class="dot dot2"></span>
+                <span class="dot dot3"></span>
+            </div>
+            <div class="left">
+                <span class="dot dot1"></span>
+                <span class="dot dot2"></span>
+                <span class="dot dot3"></span>
+                <span class="dot dot4"></span>
+            </div>
+            <div class="top">
+                <span class="dot dot1"></span>
+                <span class="dot dot2"></span>
+                <span class="dot dot3"></span>
+                <span class="dot dot4"></span>
+                <span class="dot dot5"></span>
+            </div>
+            <div class="bottom">
+                <span class="dot dot1"></span>
+                <span class="dot dot2"></span>
+                <span class="dot dot3"></span>
+                <span class="dot dot4"></span>
+                <span class="dot dot5"></span>
+                <span class="dot dot6"></span>
+            </div>
+        </div>
+    </section>
+
+
 
     <script src="main.js"></script>
 

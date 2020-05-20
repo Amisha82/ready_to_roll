@@ -3,13 +3,7 @@
 //const dieRolls = []
 //let roll = document.querySelector("#num-of-dice");
 //rollbutton.addEventListener("click"), function () {
-//  console.log("#num-of-dice")
-
-//get the value of the input text box and ssignand each time "roll" randomly from 1-6
-//
-// loop that num of TimeRanges//
-
-
+let cube = document.querySelector("#cube")
 let text = document.querySelector("#num-of-dice")
 let rollbutton = document.querySelector("#roll-button")
 let totalofall = document.querySelector("#total")
@@ -17,17 +11,24 @@ let showbutton = document.querySelector("#showalldice")
 let oderlist = document.querySelector("ol")
 let dieRoll = []
 let show = document.querySelector("#olist")
+let resetbutton = document.querySelector("#reset-button")
+let red_imagebutton = document.querySelector("redimage")
+
+
+
+//window.onload = function () {
+
+//  var img = document.getElementById("cube")
+//ctx.drawImage(img, 5, 5);
+//this.angle = 0
+//};
 
 function getRandom() {
     var randomdie = Math.floor((Math.random() * 6) + 1);
     return randomdie;
 }
 
-//function total() {
-//  let total = 0;
-//for (let i = 0; i < ray.length; i++)
-//  total += ray[i];
-//console.log(ray)}
+
 function sum(dieRoll) {
 
     return dieRoll[0] + dieRoll[1] + dieRoll[2] +
@@ -88,37 +89,35 @@ rollbutton.addEventListener("click", function () {
         //  show.innerHTML = '<li class="ol">' + newDice. + '</li>'
     })
 
-}
+
+})
+
+resetbutton.addEventListener("click", function () {
+    tot.innerHTML = 0;
+    show.innerHTML = 0;
+
+})
 
 
+rollbutton.addEventListener("click", function () {
+    var cube = document.getElementById('cube');
 
-    //   const newDice = '<li class="olist">' + numrolled[0] + '</li>' + '</br>' + '<li class="olist">' + numrolled[1] + '</li>' + '</br>' + '<li class="olist">' + + numrolled[2] + '</li>' + '</br>' + '<li class="olist">' + numrolled[3] + '</li>' + '</br>' + '<li class="olist">' + numrolled[4] + '</li>' + '</br>' + '<li class="olist">' + numrolled[5];
-    //  (olist.innerHTML) = newDice
-)
+    var min = 1;
+    var max = 24;
 
+    rollbutton.onclick = function () {
+        var xRand = getRandom(max, min);
+        var yRand = getRandom(max, min);
 
-
-
-
-
-//showbutton.addEventListener("click", function () {
-
-  //  let numrolled = o
-   // console.log(o)
+        cube.style.webkitTransform = 'rotateX(' + xRand + 'deg) rotateY(' + yRand + 'deg)';
+        cube.style.transform = 'rotateX(' + xRand + 'deg) rotateY(' + yRand + 'deg)';
 
 
+        function getRandom(max, min) {
+            return (Math.floor(Math.random() * (max - min)) + min) * 90;
+        }
 
-//})
-
-
-
-
-
-
+    }
+})
 
 
-
-   // counter = 0
-   // while
-    //showalldice.innerHtML
-   // (counter < dieRoll.length) { var p=document./////createElement("p"); p.innerHTML=dieRoll[counter]; oderlist.appendChild(p);}
