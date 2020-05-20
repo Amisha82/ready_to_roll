@@ -95,6 +95,8 @@ rollbutton.addEventListener("click", function () {
 resetbutton.addEventListener("click", function () {
     tot.innerHTML = 0;
     show.innerHTML = 0;
+    text.value = "";
+
 
 })
 
