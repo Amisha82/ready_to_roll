@@ -98,6 +98,7 @@ resetbutton.addEventListener("click", function () {
     tot.innerHTML = "";
     show.innerHTML = "";
     text.value = "";
+    numofsides.value = "";
 
 
 })
